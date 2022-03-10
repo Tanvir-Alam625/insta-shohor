@@ -27,7 +27,8 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-    return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  console.log(text);
+    return text.length < 30 ? text : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -45,15 +46,12 @@ const switchTab = (id) => {
         document.getElementById( "reported" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
-
-        displayReportedPosts();
     }
 };
 
 const createPost = (post) => {
     const image = post.image;
     const userImage = post.userImage;
-    console.log(post.userImage);
     const div = document.createElement( "article" );
     div.classList.add( "post" );
     div.innerHTML = `
