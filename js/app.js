@@ -24,7 +24,6 @@ const reportPost = (id) => {
     reportedPostsId.push(id);
     // console.log(reportedPostsId);
     const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
-    console.log(remainingPosts);
     showPosts(remainingPosts);
 };
 
@@ -161,7 +160,6 @@ const displayReportedPosts = () => {
         const div = createPost(post);
         reported.appendChild(div);
     });
-    console.log(reportedPosts);
 };
 
 const loadPosts = async () =>{
